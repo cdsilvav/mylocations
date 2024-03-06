@@ -13,6 +13,8 @@
 		1C23B0272B8CE966003E6FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C23B0252B8CE966003E6FD3 /* Main.storyboard */; };
 		1C23B0292B8CE966003E6FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C23B0282B8CE966003E6FD3 /* Assets.xcassets */; };
 		1C23B02C2B8CE966003E6FD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C23B02A2B8CE966003E6FD3 /* LaunchScreen.storyboard */; };
+		1C23B0342B923B76003E6FD3 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C23B0332B923B76003E6FD3 /* LocationDetailsViewController.swift */; };
+		1C23B0362B97AD3B003E6FD3 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C23B0352B97AD3B003E6FD3 /* CategoryPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		1C23B0282B8CE966003E6FD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C23B02B2B8CE966003E6FD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C23B02D2B8CE966003E6FD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C23B0332B923B76003E6FD3 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
+		1C23B0352B97AD3B003E6FD3 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				1C23B0282B8CE966003E6FD3 /* Assets.xcassets */,
 				1C23B02A2B8CE966003E6FD3 /* LaunchScreen.storyboard */,
 				1C23B02D2B8CE966003E6FD3 /* Info.plist */,
+				1C23B0332B923B76003E6FD3 /* LocationDetailsViewController.swift */,
+				1C23B0352B97AD3B003E6FD3 /* CategoryPickerViewController.swift */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C23B0342B923B76003E6FD3 /* LocationDetailsViewController.swift in Sources */,
 				1C23B0242B8CE966003E6FD3 /* CurrentLocationViewController.swift in Sources */,
 				1C23B0202B8CE966003E6FD3 /* AppDelegate.swift in Sources */,
+				1C23B0362B97AD3B003E6FD3 /* CategoryPickerViewController.swift in Sources */,
 				1C23B0222B8CE966003E6FD3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
