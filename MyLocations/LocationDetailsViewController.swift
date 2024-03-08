@@ -30,9 +30,20 @@ class LocationDetailsViewController: UITableViewController {
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     // MARK: - Actions
+    
     @IBAction func done() {
-        navigationController?.popViewController(animated: true)
+        guard let mainView = navigationController?.parent?.view
+        else {
+            return
+        }
+        let hudView = HudView.hud(inView: mainView, animated: true)
+        hudView.text = "Tagged"
+        afterDelay(0.6) {
+            hudView.hide()
+            self.navigationController?.popViewController(animated: true)
+        }
     }
+    
     @IBAction func cancel() {
         navigationController?.popViewController(animated: true)
     }
@@ -42,6 +53,18 @@ class LocationDetailsViewController: UITableViewController {
         categoryName = controller.selectedCategoryName
         categoryLabel.text = categoryName
     }
+    
+    @objc func hideKeyboard(_ gestureRecognizer: UIGestureRecognizer) {
+        let point = gestureRecognizer.location(in: tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        
+        if indexPath != nil && indexPath!.section == 0 && indexPath!.row == 0 {
+            return
+        }
+        descriptionTextView.resignFirstResponder()
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,13 +84,32 @@ class LocationDetailsViewController: UITableViewController {
             addressLabel.text = "No Address Found"
         }
         dateLabel.text = format(date: Date())
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        gestureRecognizer.cancelsTouchesInView = false
+        tableView.addGestureRecognizer(gestureRecognizer)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender:
                           Any?) {
         if segue.identifier == "PickCategory" {
             let controller = segue.destination as!
             CategoryPickerViewController
             controller.selectedCategoryName = categoryName
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if indexPath.section == 0 || indexPath.section == 1 {
+            return indexPath
+        } else {
+            return nil
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 && indexPath.section == 0 {
+            descriptionTextView.becomeFirstResponder()
         }
     }
 }
