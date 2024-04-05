@@ -25,6 +25,20 @@ class LocationDetailsViewController: UITableViewController {
     var categoryName = "No Category"
     var managedObjectContext: NSManagedObjectContext!
     var date = Date()
+    var descriptionText = ""
+    var locationToEdit: Location? {
+        didSet {
+            if let location = locationToEdit {
+                descriptionText = location.locationDescription
+                categoryName = location.category
+                date = location.date
+                coordinate = CLLocationCoordinate2DMake(
+                    location.latitude,
+                    location.longitude)
+                placemark = location.placemark
+            }
+        }
+    }
     
     
     @IBOutlet var descriptionTextView: UITextView!
@@ -33,7 +47,7 @@ class LocationDetailsViewController: UITableViewController {
     @IBOutlet var longitudeLabel: UILabel!
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
-    // MARK: - Actions
+    
     
     @IBAction func done() {
         guard let mainView = navigationController?.parent?.view
@@ -41,7 +55,14 @@ class LocationDetailsViewController: UITableViewController {
           let hudView = HudView.hud(inView: mainView, animated: true)
           hudView.text = "Tagged"
           
-          let location = Location(context: managedObjectContext)
+        let location: Location
+        if let temp = locationToEdit {
+            hudView.text = "Updated"
+            location = temp
+        } else {
+            hudView.text = "Tagged"
+            location = Location(context: managedObjectContext)
+        }
           
           location.locationDescription = descriptionTextView.text
           location.category = categoryName
@@ -87,7 +108,11 @@ class LocationDetailsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        descriptionTextView.text = ""
+        if let location = locationToEdit {
+            title = "Edit Location"
+        }
+        
+        descriptionTextView.text = descriptionText
         categoryLabel.text = categoryName
         
         latitudeLabel.text = String(
