@@ -23,6 +23,7 @@
 		1C329B692BB717D800B484E6 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C329B682BB717D800B484E6 /* LocationsViewController.swift */; };
 		1C329B6B2BB76DFB00B484E6 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C329B6A2BB76DFB00B484E6 /* LocationCell.swift */; };
 		1C329B6D2BBF937200B484E6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C329B6C2BBF937200B484E6 /* MapViewController.swift */; };
+		1C329B6F2BD2199E00B484E6 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C329B6E2BD2199E00B484E6 /* UIImage+Resize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		1C329B682BB717D800B484E6 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		1C329B6A2BB76DFB00B484E6 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		1C329B6C2BBF937200B484E6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1C329B6E2BD2199E00B484E6 /* UIImage+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				1C23B03B2B9B5B8E003E6FD3 /* MyLocations.xcdatamodeld */,
 				1C23B0212B8CE966003E6FD3 /* SceneDelegate.swift */,
 				1C329B6C2BBF937200B484E6 /* MapViewController.swift */,
+				1C329B6E2BD2199E00B484E6 /* UIImage+Resize.swift */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				1C329B692BB717D800B484E6 /* LocationsViewController.swift in Sources */,
 				1C23B0412B9B646D003E6FD3 /* Location+CoreDataProperties.swift in Sources */,
 				1C329B6D2BBF937200B484E6 /* MapViewController.swift in Sources */,
+				1C329B6F2BD2199E00B484E6 /* UIImage+Resize.swift in Sources */,
 				1C329B6B2BB76DFB00B484E6 /* LocationCell.swift in Sources */,
 				1C23B03A2B9A28EC003E6FD3 /* Functions.swift in Sources */,
 				1C23B0202B8CE966003E6FD3 /* AppDelegate.swift in Sources */,
